@@ -121,7 +121,6 @@ body {
     background: var(--primary-hover);
 }
 
-/* 9. Badge de Vacío */
 .empty-msg {
     grid-column: 1 / -1;
     text-align: center;
@@ -129,4 +128,31 @@ body {
     background: var(--white);
     border-radius: 12px;
     color: var(--gray);
+}
+
+.btn-admin {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 600;
+    padding: 5px 15px;
+    border: 1px solid var(--dark);
+    border-radius: 20px;
+}
+
+.linea-decorativa {
+    width: 60px;
+    height: 4px;
+    background: var(--primary);
+    margin: 10px auto;
+}
+
+.btn-ver {
+    display: block;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-top: 15px;
 }
