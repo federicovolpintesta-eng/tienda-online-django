@@ -118,8 +118,8 @@ CART_SESSION_ID = 'cart'
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+#MEDIA_URL = 'media/'
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # myshop/settings.py
 
@@ -183,4 +183,4 @@ CLOUDINARY_STORAGE = {
 # Esto le dice a Django que use Cloudinary para los archivos media
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-# Cambio final para Vercel.
+DBBACKUP_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
