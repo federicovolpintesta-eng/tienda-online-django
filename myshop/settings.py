@@ -175,9 +175,9 @@ JAZZMIN_UI_TWEAKS = {
 
 # Configuración de Cloudinary
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'TU_CLOUD_NAME',
-    'API_KEY': 'TU_API_KEY',
-    'API_SECRET': 'TU_API_SECRET'
+    'CLOUD_NAME': 'du9d33xn1',
+    'API_KEY': '754691892686927',
+    'API_SECRET': 'HaNuANdYIgSWBlaudXThSdpXl80'
 }
 
 # Esto le dice a Django que use Cloudinary para los archivos media
