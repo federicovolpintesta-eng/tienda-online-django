@@ -20,13 +20,13 @@ ALLOWED_HOSTS = ['*'] # Cambio final para el master
 # Application definition
 
 INSTALLED_APPS = [
+    'cloudinary_storage',
     'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
     'tienda',
@@ -180,5 +180,5 @@ CLOUDINARY_STORAGE = {
 
 # Esto le dice a Django que use Cloudinary para los archivos media
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
+MEDIA_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 DBBACKUP_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
