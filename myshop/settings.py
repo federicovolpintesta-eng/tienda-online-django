@@ -118,3 +118,55 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+# myshop/settings.py
+
+JAZZMIN_SETTINGS = {
+    "site_title": "Tech Store Admin",
+    "site_header": "Tech Store",
+    "site_brand": "TECH STORE",
+    "welcome_sign": "Bienvenido al Panel de Control",
+    "copyright": "Tech Store 2026", # Acá podés poner tu nombre si querés
+    "search_model": ["auth.User", "tienda.Product"],
+    
+    # Menú lateral
+    "show_sidebar": True,
+    "navigation_expanded": True,
+    
+    # Iconos para que no se corten las palabras (opcional pero queda pro)
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "tienda.Category": "fas fa-list",
+        "tienda.Product": "fas fa-laptop",
+        "tienda.Order": "fas fa-shopping-cart",
+    },
+    
+    # OCULTAR JAZZMIN Y COPYRIGHT
+    "show_ui_builder": False, # Esto quita el configurador de colores
+    "hide_apps": [],
+    "hide_models": [],
+}
+
+JAZZMIN_UI_TWEAKS = {
+    "navbar_small_text": False,
+    "footer_small_text": True,
+    "body_small_text": False,
+    "brand_small_text": False,
+    "brand_colour": "navbar-dark",
+    "accent": "accent-primary",
+    "navbar": "navbar-dark",
+    "no_navbar_border": True,
+    "navbar_fixed": False,
+    "layout_boxed": False,
+    "footer_fixed": False,
+    "sidebar_fixed": False,
+    "sidebar": "sidebar-dark-primary",
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
+    "sidebar_nav_child_indent": False,
+    "sidebar_nav_compact_style": False,
+    "sidebar_nav_legacy_style": False,
+    "sidebar_nav_flat_style": False,
+    "theme": "flatly", # Este tema es muy limpio
+}
