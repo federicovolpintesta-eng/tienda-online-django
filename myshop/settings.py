@@ -26,7 +26,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary',
     'tienda',
 ]
 
@@ -170,3 +172,13 @@ JAZZMIN_UI_TWEAKS = {
     "sidebar_nav_flat_style": False,
     "theme": "flatly", # Este tema es muy limpio
 }
+
+# Configuración de Cloudinary
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'TU_CLOUD_NAME',
+    'API_KEY': 'TU_API_KEY',
+    'API_SECRET': 'TU_API_SECRET'
+}
+
+# Esto le dice a Django que use Cloudinary para los archivos media
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
