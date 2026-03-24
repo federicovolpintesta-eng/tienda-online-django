@@ -182,3 +182,5 @@ CLOUDINARY_STORAGE = {
 
 # Esto le dice a Django que use Cloudinary para los archivos media
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+# Cambio final para Vercel.
