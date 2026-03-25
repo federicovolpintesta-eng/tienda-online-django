@@ -108,16 +108,6 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/6.0/howto/static-files/
-
-STATIC_URL = 'static/'
-
-CART_SESSION_ID = 'cart'
-
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 
 # myshop/settings.py
 
@@ -171,6 +161,15 @@ JAZZMIN_UI_TWEAKS = {
     "theme": "flatly", # Este tema es muy limpio
 }
 
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Media files (Cloudinary)
+# IMPORTANTE: Definir MEDIA_URL y que no apunte a un path local
+MEDIA_URL = '/media/' 
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 # Configuración de Cloudinary
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'du9d33xn1',
@@ -178,7 +177,16 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': 'HaNuANdYIgSWBlaudXThSdpXl80'
 }
 
-# Esto le dice a Django que use Cloudinary para los archivos media
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-MEDIA_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-DBBACKUP_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# Diccionario STORAGES (Esto es lo que evita el error OSError en Vercel)
+STORAGES = {
+    "default": {
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
+
+# Mantener Jazzmin abajo de todo
+CART_SESSION_ID = 'cart'
+# ... (aquí siguen tus JAZZMIN_SETTINGS y JAZZMIN_UI_TWEAKS)
