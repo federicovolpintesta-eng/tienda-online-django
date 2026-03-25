@@ -20,8 +20,10 @@ class OrderItemInline(admin.TabularInline):
     raw_id_fields = ['product']
 
 
+
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ['id', 'user', 'paid', 'created']
-    list_filter = ['paid', 'created']
-    inlines = [OrderItemInline] 
+    list_display = ['id', 'user', 'paid', 'created', 'updated'] 
+    list_filter = ['paid', 'created', 'updated']
+    list_editable = ['paid']
+    inlines = [OrderItemInline]

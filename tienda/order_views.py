@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Order, OrderItem
 from .cart.cart import Cart
+from django.contrib.auth.decorators import login_required
 
 def order_create(request):
     cart = Cart(request)
@@ -16,3 +17,8 @@ def order_create(request):
         cart.clear()
         return render(request, 'tienda/order/created.html', {'order': order})
     return render(request, 'tienda/cart/detail.html', {'cart': cart})
+
+@login_required
+def user_orders(request):
+    orders = Order.objects.filter(user=request.user).order_by('-created')
+    return render(request, 'tienda/order/history.html', {'orders': orders})
