@@ -26,4 +26,4 @@ def product_detail(request, id, slug):
     product = get_object_or_404(Product, id=id, slug=slug)
     return render(request,
                   'tienda/product/detail.html',
-                  {'product': product})
+                  {'product': product})# Verificando cambios para el main
